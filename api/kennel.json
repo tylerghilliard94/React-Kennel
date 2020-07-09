@@ -1,0 +1,57 @@
+{
+  "animals": [
+    {
+      "id": 1,
+      "name": "Doodles",
+      "breed": "Poodle",
+      "picture": "https://tse3.mm.bing.net/th?id=OIP.yum_DXf18masx0EBdxALbgHaFj&pid=Api&P=0&w=220&h=166}"
+    },
+    {
+      "id": 3,
+      "name": "Esme",
+      "breed": "Pitbull",
+      "picture": "https://tse3.mm.bing.net/th?id=OIP.G-CC6UgK8erp9KzmqcE8gAHaF1&pid=Api&P=0&w=213&h=169"
+    }
+  ],
+  "locations": [
+    {
+      "id": 1,
+      "place": "NSS",
+      "address": "500 Paws Place"
+    },
+    {
+      "id": 2,
+      "place": "Paws R Us",
+      "address": "5000 Plus Park Place"
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "name": "Robert",
+      "job": "Groomer"
+    },
+    {
+      "id": 2,
+      "name": "Shannon",
+      "job": "Caregiver"
+    }
+  ],
+  "owners": [
+    {
+      "id": 1,
+      "name": "Alexander",
+      "pet": "Doodles"
+    },
+    {
+      "id": 2,
+      "name": "Julia",
+      "pet": "Decker"
+    },
+    {
+      "id": 3,
+      "name": "Maxwell",
+      "pet": "Esme"
+    }
+  ]
+}
