@@ -7,6 +7,12 @@
       "picture": "https://tse3.mm.bing.net/th?id=OIP.yum_DXf18masx0EBdxALbgHaFj&pid=Api&P=0&w=220&h=166}"
     },
     {
+      "id": 2,
+      "name": "Doodl",
+      "breed": "Poodl",
+      "picture": "https://i.ytimg.com/vi/dzPVHGE_RMQ/maxresdefault.jpg"
+    },
+    {
       "id": 3,
       "name": "Esme",
       "breed": "Pitbull",
@@ -23,6 +29,11 @@
       "id": 2,
       "place": "Paws R Us",
       "address": "5000 Plus Park Place"
+    },
+    {
+      "id": 3,
+      "place": "NSS",
+      "address": "500 Paws Place"
     }
   ],
   "employees": [
