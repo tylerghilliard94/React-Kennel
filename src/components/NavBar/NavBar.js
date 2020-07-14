@@ -1,8 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { withRouter } from 'react-router-dom';
+import { Link, NavLink } from "react-router-dom";
 import "./NavBar.css";
 
-const NavBar = () => {
+const NavBar = props => {
+  // localStorage.removeItem(`credentials`)
+  const handleLogout = () => {
+    props.clearUser();
+    ;
+  }
   return (
     <header>
       <h1 className="site-title">
@@ -13,27 +19,61 @@ const NavBar = () => {
       <nav>
         <ul className="container">
           <li>
-            <Link className="nav-link" to="/">
+            <NavLink className="nav-link" exact to="/" disabled activeStyle={{
+
+              color: "lime"
+            }}>
               Home
-            </Link>
+            </NavLink>
           </li>
-          <li>
-            <Link className="nav-link" to="/animals">
+          {props.hasUser
+            ? <li>
+          
+            <NavLink className="nav-link" to="/animals" disabled activeStyle={{
+              
+              color: "lime"
+            }}>
               Animals
-            </Link>
+            </NavLink>
           </li>
+          : null}
           <li>
-              <Link className="nav-link" to="/Location">
+              <NavLink className="nav-link" to="/Location" disabled activeStyle={{
+              
+              color: "lime"
+            }}>
                   Locations
-              </Link></li>
-          <li>
-              <Link className="nav-link" to="/Employee">
+              </NavLink></li>
+          {props.hasUser
+            ? <li>
+              <NavLink className="nav-link" to="/Employee" disabled activeStyle={{
+              
+              color: "lime"
+            }}>
                   Employee
-              </Link></li>
-          <li>
-              <Link className="nav-link" to="/Owner">
+              </NavLink></li>
+              : null}
+              {props.hasUser
+                ? <li>
+              <NavLink className="nav-link" to="/Owner" disabled activeStyle={{
+              
+              color: "lime"
+            }}>
                   Owner
-              </Link></li>
+              </NavLink></li>
+              : null}
+              {props.hasUser
+                ? 
+                <li>
+                <NavLink className="nav-link" exact to= "/" onClick={handleLogout}> Logout </NavLink>
+              </li>
+              : <li>
+                <NavLink className="nav-link" to="/Login" disabled activeStyle={{
+              
+              color: "lime"
+            }}>
+                  Login
+              </NavLink></li>}
         </ul>
       </nav>
     </header>

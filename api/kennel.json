@@ -4,19 +4,17 @@
       "id": 1,
       "name": "Doodles",
       "breed": "Poodle",
-      "picture": "https://tse3.mm.bing.net/th?id=OIP.yum_DXf18masx0EBdxALbgHaFj&pid=Api&P=0&w=220&h=166}"
-    },
-    {
-      "id": 2,
-      "name": "Doodl",
-      "breed": "Poodl",
-      "picture": "https://i.ytimg.com/vi/dzPVHGE_RMQ/maxresdefault.jpg"
+      "picture": "https://tse3.mm.bing.net/th?id=OIP.yum_DXf18masx0EBdxALbgHaFj&pid=Api&P=0&w=220&h=166}",
+      "employeeId": 1,
+      "locationId": 2
     },
     {
       "id": 3,
       "name": "Esme",
       "breed": "Pitbull",
-      "picture": "https://tse3.mm.bing.net/th?id=OIP.G-CC6UgK8erp9KzmqcE8gAHaF1&pid=Api&P=0&w=213&h=169"
+      "picture": "https://tse3.mm.bing.net/th?id=OIP.G-CC6UgK8erp9KzmqcE8gAHaF1&pid=Api&P=0&w=213&h=169",
+      "employeeId": 4,
+      "locationId": 1
     }
   ],
   "locations": [
@@ -29,23 +27,32 @@
       "id": 2,
       "place": "Paws R Us",
       "address": "5000 Plus Park Place"
-    },
-    {
-      "id": 3,
-      "place": "NSS",
-      "address": "500 Paws Place"
     }
   ],
   "employees": [
     {
       "id": 1,
       "name": "Robert",
-      "job": "Groomer"
+      "job": "Groomer",
+      "locationId": 2
     },
     {
       "id": 2,
       "name": "Shannon",
-      "job": "Caregiver"
+      "job": "Caregiver of the Gods",
+      "locationId": 2
+    },
+    {
+      "name": "Bert",
+      "job": "Groomer",
+      "id": 3,
+      "locationId": 1
+    },
+    {
+      "name": "Michelle",
+      "job": "Vet",
+      "id": 4,
+      "locationId": 1
     }
   ],
   "owners": [

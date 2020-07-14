@@ -38,7 +38,8 @@ const AnimalList = props => {
         <AnimalCard
           key={animal.id}
           animal={animal}
-          deletedAnimal={deleteAnimal} />)}
+          deletedAnimal={deleteAnimal}
+          {...props} />)}
     </div>
   </>
   );
