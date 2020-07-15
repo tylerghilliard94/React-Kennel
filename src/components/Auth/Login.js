@@ -1,7 +1,10 @@
 import React, { useState } from "react"
+import Kennel from "../kennel"
 
 const Login = props => {
   const [credentials, setCredentials] = useState({ email: "", password: "" });
+  const [rememberMe, setRememberMe] = useState(false);
+ 
 
   // Update state whenever an input field is edited
   const handleFieldChange = (evt) => {
@@ -10,17 +13,30 @@ const Login = props => {
     setCredentials(stateToChange);
   };
 
+  const handleRemember = (evt) => {
+      setRememberMe(true)
+  }
   const handleLogin = (e) => {
     e.preventDefault();
+    console.log(rememberMe)
     /*
         For now, just store the email and password that
         the customer enters into session storage.
         ...Let's just trust the user... That's a good idea, right????
     */
-    sessionStorage.setItem(
-      "credentials",
-      JSON.stringify(credentials)
-    );
+   if(rememberMe == true) {
+    localStorage.setItem(
+        "credentials",
+        JSON.stringify(credentials),
+        
+        
+     );props.setUser(true)
+    }else {
+        props.setUser(credentials)
+      
+    };
+    console.log("local", localStorage.credentials)
+    console.log("session", sessionStorage.credentials)
     props.history.push("/");
   }
 
@@ -40,8 +56,11 @@ const Login = props => {
             placeholder="Password"
             required="" />
           <label htmlFor="inputPassword">Password</label>
+          <input onClick={handleRemember} type="checkbox" id="rememberMe"></input>
+          <label htmlFor="rememberMe">Remember Me</label>
         </div>
         <button type="submit">Sign in</button>
+        
       </fieldset>
     </form>
   );

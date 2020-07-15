@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import AnimalManager from "../../modules/AnimalManager";
 import "./AnimalDetail.css";
 import {firstLetterCase} from '../../modules/helper'
+import { Redirect } from "react-router-dom";
 
 const AnimalDetail = props => {
   const [animal, setAnimal] = useState({ name: "", breed: "", image: "" });
@@ -27,24 +28,31 @@ const AnimalDetail = props => {
     );
   };
 
-  
-  return (
-    console.log(animal.picture),
-    <div className="card">
-      <div className="card-content">
-        <picture>
-          <img src={animal.picture} alt="My Dog" />
-        </picture>
-        <h3>
-          Name: <span style={{ color: "darkslategrey" }}>{firstLetterCase(animal.name)}</span>
-        </h3>
-        <p>Breed: {animal.breed}</p>
-        <button type="button" disabled={isLoading} onClick={handleDelete}>
-          Discharge
-        </button>
+  if(animal.name != undefined){
+    return (
+      <div className="card">
+        <div className="card-content">
+          <picture>
+            <img src={animal.picture} alt="My Dog" />
+          </picture>
+          <h3>
+            Name: <span style={{ color: "darkslategrey" }}>{firstLetterCase(animal.name)}</span>
+          </h3>
+          <p>Breed: {animal.breed}</p>
+          <button type="button" disabled={isLoading} onClick={handleDelete}>
+            Discharge
+          </button>
+          <button type="button"
+            onClick={() => props.history.push(`/animals/${props.match.params.animalId}/edit`)}>
+            Edit
+          </button>
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }else{
+    return <Redirect to="/animals" />
+  }
+}
+  
 
 export default AnimalDetail;
